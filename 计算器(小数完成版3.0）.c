@@ -13,25 +13,25 @@ int main()
 	int j,p,i,num_decimal,f=1,brackets=0,o,brackets_num;
 	int flag;
 	
-    printf("你渴望力量吗，输入你想算的吧（那个那个如果不在最后输入等号的话，会有非常非常可怕的结果发生）\n");
+    printf("浣犳复鏈涘姏閲忓悧锛岃緭鍏ヤ綘鎯崇畻鐨勫惂锛堥偅涓偅涓鏋滀笉鍦ㄦ渶鍚庤緭鍏ョ瓑鍙风殑璇濓紝浼氭湁闈炲父闈炲父鍙�曠殑缁撴灉鍙戠敓锛塡n");
     while(f==1)
   {
   	double a[1000]={0};
-    i=1;
-    flag=num_decimal=decimal=0;
+        i=1;
+        flag=num_decimal=decimal=0;
 	while(ch=getchar(),ch!='\n')
 	{
 	  if(ch=='(')
 	  {
 	  	brackets++;
-	    d[brackets]=ch;
-	    pos[brackets]=i;
+	        d[brackets]=ch;
+	        pos[brackets]=i;
 	  }
 	  else if (ch==')')
 	  {
 	  	brackets++;
-	    d[brackets]=ch;
-	    pos[brackets]=i+1;
+	        d[brackets]=ch;
+	        pos[brackets]=i+1;
 	  }
 	  else if(ch=='.')
 	  {
@@ -44,21 +44,21 @@ int main()
 	  	num_decimal++;
 	  	decimal=decimal+(ch-'0')/pow(10,num_decimal);
 	  }
-      else
-      {
-      	flag=0;
-      	a[i]=a[i]+decimal;
-      	num_decimal=decimal=0;
-      	i++;
-	    b[i]=ch;
-	    i++;
+          else
+          {
+            	flag=0;
+        	a[i]=a[i]+decimal;
+         	num_decimal=decimal=0;
+        	i++;
+        	b[i]=ch;
+	        i++;
 	  }
      } 
      
     p=1;
     sumnum=i-1; 
     j=i=1;
-    //括号配对 
+    //鎷彿閰嶅 
 	for(o=1;o<=brackets;o++)
     {
     	if(d[o]=='(')
@@ -73,7 +73,7 @@ int main()
 		}
 	}
 	brackets_num=i;
-	//括号配对 
+	//鎷彿閰嶅 
 	end[i]=sumnum;
 	start[i]=1;
   for(o=1;o<=brackets_num;o++)
@@ -151,7 +151,7 @@ int main()
 	if(b[2]=='=')
 	printf("what you want:%lf\n",a[1]);
 	else
-	printf("可恶，你竟然不加等号，你..你你完了！！please put '='\n");
+	printf("鍙伓锛屼綘绔熺劧涓嶅姞绛夊彿锛屼綘..浣犱綘瀹屼簡锛侊紒please put '='\n");
   }  
 	return 0;
 }
